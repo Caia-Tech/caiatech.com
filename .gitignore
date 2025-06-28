@@ -16,6 +16,24 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.*
+
+# Kubernetes secrets
+k8s/*secret*.yaml
+k8s/*-secret.yaml
+k8s/*.bak
+
+# Credentials and certificates
+*credentials*
+*private*
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+
+# Deployment configs with potential secrets
+deploy-*.sh
 
 # macOS-specific files
 .DS_Store
