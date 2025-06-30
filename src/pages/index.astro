@@ -14,10 +14,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <span class="mono">Caia</span>
           <span class="accent">Tech</span>
         </h1>
-        <p class="hero-subtitle" itemprop="description">
-          Computer science research lab specializing in <strong>transformer architecture implementations</strong>, 
-          <strong>distributed systems research</strong>, and <strong>machine learning pipeline optimization</strong>
-        </p>
         <div class="button-container">
           <button class="terminal-btn" onclick="showModal('Software')"><span class="prompt">$</span> ./software</button>
           <button class="terminal-btn" onclick="showModal('Papers')"><span class="prompt">$</span> ./papers</button>
@@ -178,19 +174,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: 1rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 2rem;
-    max-width: 600px;
-    line-height: 1.6;
-  }
-
-  .hero-subtitle strong {
-    color: var(--color-accent);
-    font-weight: 600;
   }
 
   .mono {
