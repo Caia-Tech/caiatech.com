@@ -7,7 +7,21 @@ export default defineConfig({
   site: 'https://caiatech.com',
   output: 'static',
   integrations: [
-    sitemap()
+    sitemap({
+      filter: (page) => page !== 'https://caiatech.com/api/',
+      customPages: [
+        'https://caiatech.com/',
+      ],
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+        },
+      },
+    })
   ],
   vite: {
     optimizeDeps: {
