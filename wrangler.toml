@@ -1,0 +1,7 @@
+# Cloudflare Pages configuration for Astro site
+name = "caiatech-website"
+pages_build_output_dir = "dist"
+
+# Environment variables (if needed)
+[vars]
+# Add any environment variables here
