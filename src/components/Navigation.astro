@@ -1,4 +1,12 @@
 ---
+/**
+ * @fileoverview Navigation Component - Caiatech
+ * @author Caiatech (https://caiatech.com)
+ * @copyright 2024 Caiatech. All rights reserved.
+ * @website https://caiatech.com
+ * @company Caiatech - Professional Developer Tools & Solutions
+ */
+
 const currentPath = Astro.url.pathname;
 ---
 
@@ -16,6 +24,9 @@ const currentPath = Astro.url.pathname;
       </a>
       <a href="/articles/" class={currentPath.startsWith('/articles') ? 'nav-link active' : 'nav-link'}>
         <span class="prompt">~/</span>articles
+      </a>
+      <a href="/tools/" class={currentPath.startsWith('/tools') ? 'nav-link active' : 'nav-link'}>
+        <span class="prompt">~/</span>tools
       </a>
     </div>
 

@@ -16,6 +16,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </h1>
         <div class="button-container">
           <a href="/articles/" class="terminal-btn"><span class="prompt">$</span> ./articles</a>
+          <a href="/tools/" class="terminal-btn"><span class="prompt">$</span> ./tools</a>
           <button class="terminal-btn" onclick="showModal('Software')"><span class="prompt">$</span> ./software</button>
           <button class="terminal-btn" onclick="showModal('Papers')"><span class="prompt">$</span> ./papers</button>
           <button class="terminal-btn" onclick="showModal('Books')"><span class="prompt">$</span> ./books</button>
@@ -293,6 +294,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .prompt {
     color: var(--color-accent);
+  }
+
+  .badge-new {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
   }
 
   .command {

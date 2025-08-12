@@ -4,12 +4,21 @@ import { generateFullSchema } from '../utils/schema';
 
 export interface Props {
   title: string;
-  description: string;
+  description?: string;
   canonical?: string;
   hideNav?: boolean;
+  keywords?: string;
+  author?: string;
 }
 
-const { title, description, canonical, hideNav = false } = Astro.props;
+const { 
+  title, 
+  description = "Caiatech - Professional Developer Tools & Solutions", 
+  canonical, 
+  hideNav = false,
+  keywords = "Caiatech, developer tools, caiatech.com, web development, programming tools, software development, online tools",
+  author = "Caiatech"
+} = Astro.props;
 const schema = generateFullSchema();
 ---
 
@@ -19,8 +28,8 @@ const schema = generateFullSchema();
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <meta name="keywords" content="transformer architecture implementations, kubernetes deployment patterns, machine learning pipeline optimization, distributed systems research, AI model efficiency studies, computer vision research applications, natural language processing innovations, edge computing ML deployment, peer-reviewed ML implementations, open source AI research, computational creativity systems, neural network optimization, distributed computing frameworks" />
-  <meta name="author" content="Caia Tech" />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content={author} />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="generator" content={Astro.generator} />
   
