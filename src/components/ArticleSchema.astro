@@ -1,0 +1,119 @@
+---
+import { calculateReadingTime } from '../utils/readingTime';
+
+export interface Props {
+  title: string;
+  description: string;
+  author?: string;
+  pubDate: Date | string;
+  updatedDate?: Date | string;
+  tags?: string[];
+  image?: string;
+  content: string;
+  url: string;
+}
+
+const { 
+  title, 
+  description, 
+  author = 'Caiatech', 
+  pubDate, 
+  updatedDate,
+  tags = [],
+  image,
+  content,
+  url
+} = Astro.props;
+
+const readingTime = calculateReadingTime(content);
+const publishDate = new Date(pubDate).toISOString();
+const modifiedDate = updatedDate ? new Date(updatedDate).toISOString() : publishDate;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": "https://caiatech.com",
+    "email": "owner@caiatech.com"
+  },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caiatech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://caiatech.com/favicon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  "wordCount": readingTime.words,
+  "keywords": tags.join(", "),
+  "articleSection": "Technology",
+  "inLanguage": "en-US",
+  ...(image && {
+    "image": {
+      "@type": "ImageObject",
+      "url": new URL(image, Astro.url.origin).toString()
+    }
+  })
+};
+
+// Add TechArticle schema for technical content
+const techArticleSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": title,
+  "description": description,
+  "proficiencyLevel": "Expert",
+  "dependencies": tags.map(tag => ({
+    "@type": "Text",
+    "name": tag
+  })),
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": "https://caiatech.com"
+  },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caiatech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://caiatech.com/favicon.svg"
+    }
+  }
+};
+
+// Add HowTo schema if article contains step-by-step instructions
+const hasSteps = content.toLowerCase().includes('step ') || 
+                 content.includes('1.') || 
+                 content.includes('First,');
+
+const howToSchema = hasSteps ? {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": title,
+  "description": description,
+  "totalTime": `PT${readingTime.minutes}M`,
+  "supply": [],
+  "tool": tags.map(tag => ({
+    "@type": "Text",
+    "name": tag
+  })),
+  "step": [] // Would need to parse content for actual steps
+} : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(techArticleSchema)} />
+{howToSchema && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}

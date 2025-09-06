@@ -1,0 +1,228 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Caia Tech" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5] [cursor=pointer]:
+          - generic [ref=e6] [cursor=pointer]: Caia
+          - generic [ref=e7] [cursor=pointer]: Tech
+      - generic [ref=e8]:
+        - link "~/home" [ref=e9] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e10] [cursor=pointer]: ~/
+          - text: home
+        - link "~/tools" [ref=e11] [cursor=pointer]:
+          - /url: /tools/
+          - generic [ref=e12] [cursor=pointer]: ~/
+          - text: tools
+        - link "~/articles" [ref=e13] [cursor=pointer]:
+          - /url: /articles/
+          - generic [ref=e14] [cursor=pointer]: ~/
+          - text: articles
+        - link "~/about" [ref=e15] [cursor=pointer]:
+          - /url: /about/
+          - generic [ref=e16] [cursor=pointer]: ~/
+          - text: about
+        - link "~/contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact/
+          - generic [ref=e18] [cursor=pointer]: ~/
+          - text: contact
+  - main [ref=e19]:
+    - navigation "Breadcrumb" [ref=e20]:
+      - list [ref=e21]:
+        - listitem [ref=e22]:
+          - link "Home" [ref=e23] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e24] [cursor=pointer]: Home
+        - listitem [ref=e25]: ›
+        - listitem [ref=e26]:
+          - link "Tools" [ref=e27] [cursor=pointer]:
+            - /url: /tools/
+            - generic [ref=e28] [cursor=pointer]: Tools
+        - listitem [ref=e29]: ›
+        - listitem [ref=e30]:
+          - generic [ref=e31]: JSON Formatter & Validator - Free Online JSON Beautifier
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: "{}"
+          - generic [ref=e36]:
+            - heading "JSON Formatter & Validator" [level=1] [ref=e37]
+            - paragraph [ref=e38]: Format, validate, and beautify JSON data
+        - generic [ref=e42]:
+          - img [ref=e43]
+          - generic [ref=e46]:
+            - heading "🔒 100% Private & Secure" [level=3] [ref=e47]
+            - paragraph [ref=e48]: No Data Collection • No Tracking • No Servers
+      - generic [ref=e49]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e58]: INPUT://json
+              - generic [ref=e59]:
+                - button "Paste" [ref=e60] [cursor=pointer]:
+                  - img [ref=e61] [cursor=pointer]
+                - button "Load Sample" [ref=e64] [cursor=pointer]:
+                  - img [ref=e65] [cursor=pointer]
+                - button "Clear" [ref=e68] [cursor=pointer]:
+                  - img [ref=e69] [cursor=pointer]
+            - textbox "Paste your JSON here..." [ref=e72]
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e79]: OUTPUT://formatted
+              - generic [ref=e80]:
+                - generic [ref=e81]:
+                  - checkbox "Minify" [ref=e82]
+                  - text: Minify
+                - button "Copy" [ref=e83] [cursor=pointer]:
+                  - img [ref=e84] [cursor=pointer]
+                - button "Download" [ref=e87] [cursor=pointer]:
+                  - img [ref=e88] [cursor=pointer]
+            - generic [ref=e93]:
+              - generic [ref=e94]:
+                - text: "Size:"
+                - generic [ref=e95]: "0"
+                - text: chars
+              - generic [ref=e96]:
+                - text: "Lines:"
+                - generic [ref=e97]: "1"
+              - generic [ref=e98]:
+                - text: "Depth:"
+                - generic [ref=e99]: "0"
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - strong [ref=e103]: Caiatech Developer Tools
+            - generic [ref=e104]: "|"
+            - link "caiatech.com" [ref=e105] [cursor=pointer]:
+              - /url: https://caiatech.com
+          - generic [ref=e106]:
+            - generic [ref=e107]: JSON Formatter & Validator v2.0.0
+            - generic [ref=e108]: "|"
+            - generic [ref=e109]: © 2025 Caiatech. All rights reserved.
+          - generic [ref=e110]:
+            - paragraph [ref=e111]:
+              - strong [ref=e112]: 🔐 100% Private Tool by Caiatech
+              - text: "-"
+              - emphasis [ref=e113]: Your data NEVER leaves your browser!
+              - text: All processing happens locally on your device. Zero data collection, zero tracking, zero servers. This tool works completely offline once loaded. Built with absolute privacy by
+              - link "Caiatech" [ref=e114] [cursor=pointer]:
+                - /url: https://caiatech.com
+              - text: .
+            - paragraph [ref=e115]:
+              - strong [ref=e116]: "Privacy Guarantee:"
+              - text: No cookies • No analytics • No third-party scripts • No cloud processing • No data storage
+            - paragraph [ref=e117]:
+              - link "More Tools" [ref=e118] [cursor=pointer]:
+                - /url: https://caiatech.com/tools
+              - generic [ref=e119]: "|"
+              - link "Privacy Policy" [ref=e120] [cursor=pointer]:
+                - /url: https://caiatech.com/privacy
+              - generic [ref=e121]: "|"
+              - link "Terms of Service" [ref=e122] [cursor=pointer]:
+                - /url: https://caiatech.com/terms
+              - generic [ref=e123]: "|"
+              - link "GitHub" [ref=e124] [cursor=pointer]:
+                - /url: https://github.com/caiatech
+  - contentinfo [ref=e125]:
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: Caia
+            - generic [ref=e131]: Tech
+          - paragraph [ref=e132]: Computer Science Research Lab focused on AI-friendly web development and privacy-first developer tools.
+          - generic [ref=e133]:
+            - generic [ref=e134]: 🔒
+            - generic [ref=e135]: 100% Privacy Guaranteed
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - heading "Navigate" [level=3] [ref=e138]
+            - list [ref=e139]:
+              - listitem [ref=e140]:
+                - link "Home" [ref=e141] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e142]:
+                - link "Tools" [ref=e143] [cursor=pointer]:
+                  - /url: /tools/
+              - listitem [ref=e144]:
+                - link "Articles" [ref=e145] [cursor=pointer]:
+                  - /url: /articles/
+              - listitem [ref=e146]:
+                - link "About" [ref=e147] [cursor=pointer]:
+                  - /url: /about/
+              - listitem [ref=e148]:
+                - link "Contact" [ref=e149] [cursor=pointer]:
+                  - /url: /contact/
+          - generic [ref=e150]:
+            - heading "Legal" [level=3] [ref=e151]
+            - list [ref=e152]:
+              - listitem [ref=e153]:
+                - link "Privacy Policy" [ref=e154] [cursor=pointer]:
+                  - /url: /privacy/
+              - listitem [ref=e155]:
+                - link "Terms of Service" [ref=e156] [cursor=pointer]:
+                  - /url: /terms/
+              - listitem [ref=e157]:
+                - link "Sitemap" [ref=e158] [cursor=pointer]:
+                  - /url: /sitemap-index.xml
+          - generic [ref=e159]:
+            - heading "Connect" [level=3] [ref=e160]
+            - list [ref=e161]:
+              - listitem [ref=e162]:
+                - link "GitHub ↗" [ref=e163] [cursor=pointer]:
+                  - /url: https://github.com/caiatech
+              - listitem [ref=e164]:
+                - link "Twitter ↗" [ref=e165] [cursor=pointer]:
+                  - /url: https://twitter.com/caiatech
+              - listitem [ref=e166]:
+                - link "LinkedIn ↗" [ref=e167] [cursor=pointer]:
+                  - /url: https://linkedin.com/company/caiatech
+              - listitem [ref=e168]:
+                - link "Email" [ref=e169] [cursor=pointer]:
+                  - /url: mailto:owner@caiatech.com
+          - generic [ref=e170]:
+            - heading "Resources" [level=3] [ref=e171]
+            - list [ref=e172]:
+              - listitem [ref=e173]:
+                - link "The Burden ↗" [ref=e174] [cursor=pointer]:
+                  - /url: https://theburden.org
+              - listitem [ref=e175]:
+                - link "Git Forensics ↗" [ref=e176] [cursor=pointer]:
+                  - /url: https://gitforensics.org
+              - listitem [ref=e177]:
+                - link "Core Tools" [ref=e178] [cursor=pointer]:
+                  - /url: /tools/#core-utilities
+              - listitem [ref=e179]:
+                - link "Security Tools" [ref=e180] [cursor=pointer]:
+                  - /url: /tools/#security-crypto
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - paragraph [ref=e184]: © 2025 Caiatech. All rights reserved.
+          - paragraph [ref=e185]: Building the bridge between AI and web developers
+        - generic [ref=e186]:
+          - generic [ref=e187]:
+            - generic [ref=e188]: 69+
+            - generic [ref=e189]: Tools
+          - generic [ref=e190]:
+            - generic [ref=e191]: 100%
+            - generic [ref=e192]: Private
+          - generic [ref=e193]:
+            - generic [ref=e194]: "0"
+            - generic [ref=e195]: Tracking
+  - generic [ref=e198]:
+    - button "Menu" [ref=e199]:
+      - img [ref=e201]
+      - generic: Menu
+    - button "Inspect" [ref=e205]:
+      - img [ref=e207]
+      - generic: Inspect
+    - button "Audit" [ref=e209]:
+      - img [ref=e211]
+      - generic: Audit
+    - button "Settings" [ref=e214]:
+      - img [ref=e216]
+      - generic: Settings
+```

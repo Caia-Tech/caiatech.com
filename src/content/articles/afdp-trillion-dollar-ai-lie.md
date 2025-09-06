@@ -1,7 +1,7 @@
 ---
 title: "Preserving Context: Why AI Systems Shouldn't Rediscover What They Already Know"
 description: "The global AI infrastructure represents one of the largest misallocations of capital in technology history. AFDP (AI-Ready Forensic Deployment Pipeline) provides the alternative: forensic intelligence that's cheaper, better, and legally defensible."
-pubDate: 2025-08-06T12:00:00Z
+pubDate: 2025-01-06T12:00:00Z
 author: "Marvin Tutt"
 tags: ["AI", "AFDP", "Forensics", "Infrastructure", "Machine Learning", "Production Learning", "Cost Analysis", "Digital Transformation"]
 featured: true

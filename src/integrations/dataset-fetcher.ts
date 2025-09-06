@@ -125,8 +125,8 @@ class DatasetFetcher {
     try {
       console.log('Fetching datasets from GitHub...');
       
-      // Fetch from the epic-datasets subdirectory, not the root
-      const response = await this.fetchWithRetry(`${this.baseGitHubUrl}/contents/epic-datasets`);
+      // Fetch from the repo root where the datasets are located
+      const response = await this.fetchWithRetry(`${this.baseGitHubUrl}/contents`);
       const contents = await response.json() as any[];
 
       const datasets: GitHubDataset[] = [];
@@ -139,7 +139,7 @@ class DatasetFetcher {
           console.log(`Processing dataset: ${item.name}`);
           
           try {
-            const datasetResponse = await this.fetchWithRetry(`${this.baseGitHubUrl}/contents/epic-datasets/${item.name}`);
+            const datasetResponse = await this.fetchWithRetry(`${this.baseGitHubUrl}/contents/${item.name}`);
             const datasetFiles = await datasetResponse.json() as any[];
 
             const files: DatasetFile[] = datasetFiles

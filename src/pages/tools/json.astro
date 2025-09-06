@@ -4,10 +4,12 @@ import CaiatechToolLayout from '../../components/tools/CaiatechToolLayout.astro'
 import ToolAttribution from '../../components/tools/ToolAttribution.astro';
 import PrivacyBadge from '../../components/tools/PrivacyBadge.astro';
 import ToolSEO from '../../components/tools/ToolSEO.astro';
+import { getToolMetadata } from '../../data/toolMetadata';
 
+const metadata = getToolMetadata('json');
 const toolInfo = {
-  name: "JSON Formatter & Validator",
-  description: "Format, validate, minify and beautify JSON data instantly. Check JSON syntax errors, convert between compact and pretty-print formats",
+  name: metadata?.title || "JSON Formatter & Validator",
+  description: metadata?.description || "Format, validate, minify and beautify JSON data instantly. Check JSON syntax errors, convert between compact and pretty-print formats",
   category: "Data Formats",
   keywords: ["json formatter", "json validator", "json beautifier", "json minifier", "json parser", "json syntax checker", "pretty print json", "json online"],
   path: "/tools/json"

@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebAPI",
+  "name": "Caiatech AI Discovery Manifest",
+  "description": "Standard AI discovery endpoint for automated content understanding and indexing",
+  "version": "1.0.0",
+  "url": "https://caiatech.com/.well-known/ai-manifest.json",
+  
+  "organization": {
+    "@type": "Organization", 
+    "name": "Caiatech",
+    "url": "https://caiatech.com",
+    "email": "owner@caiatech.com",
+    "description": "Computer science research lab specializing in AI, ML, and distributed systems"
+  },
+  
+  "aiWelcomePolicy": {
+    "crawlingAllowed": true,
+    "trainingDataAllowed": true,
+    "commercialUseAllowed": true,
+    "rateLimits": "none",
+    "authentication": "not-required",
+    "preferredUserAgents": [
+      "GPTBot",
+      "ChatGPT-User", 
+      "CCBot",
+      "anthropic-ai",
+      "Claude-Web",
+      "Googlebot",
+      "Bingbot"
+    ]
+  },
+  
+  "contentDiscovery": {
+    "robotsTxt": "https://caiatech.com/robots.txt",
+    "sitemapIndex": "https://caiatech.com/sitemap-index.xml",
+    "apiSchema": "https://caiatech.com/api-schema.json",
+    "digitalFootprint": "https://caiatech.com/digital-footprint.json"
+  },
+  
+  "structuredData": {
+    "formats": ["json-ld", "microdata", "rdfa"],
+    "schemas": ["schema.org", "dublin-core"],
+    "coverage": "comprehensive"
+  },
+  
+  "contentTypes": [
+    {
+      "type": "tools",
+      "count": 69,
+      "url": "https://caiatech.com/tools/",
+      "description": "Privacy-first developer tools",
+      "format": "web-application"
+    },
+    {
+      "type": "datasets", 
+      "url": "https://caiatech.com/datasets/",
+      "description": "ML training datasets",
+      "formats": ["json", "jsonl", "parquet"],
+      "license": "CC0-1.0"
+    },
+    {
+      "type": "articles",
+      "url": "https://caiatech.com/articles/",
+      "description": "Technical documentation and research",
+      "format": "markdown-html"
+    }
+  ],
+  
+  "lastUpdated": "2024-01-01T00:00:00Z",
+  "updateFrequency": "daily"
+}

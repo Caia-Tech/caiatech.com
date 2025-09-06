@@ -13,6 +13,10 @@ export default defineConfig({
       filter: (page) => page !== 'https://caiatech.com/api/',
       customPages: [
         'https://caiatech.com/',
+        'https://caiatech.com/about/',
+        'https://caiatech.com/contact/',
+        'https://caiatech.com/privacy/',
+        'https://caiatech.com/terms/',
         'https://caiatech.com/constitution',
       ],
       changefreq: 'weekly',

@@ -56,7 +56,22 @@ const structuredData = {
         "@type": "Organization",
         "name": "Caiatech",
         "url": "https://caiatech.com"
-      }
+      },
+      "isAccessibleForFree": true,
+      "usageInfo": "No registration required, runs entirely in browser",
+      "maintainer": {
+        "@type": "Organization",
+        "name": "Caiatech"
+      },
+      "programmingLanguage": ["JavaScript", "HTML", "CSS"],
+      "runtimePlatform": "Web Browser",
+      "storageRequirements": "0 MB",
+      "processingRequirements": "Client-side only",
+      "memoryRequirements": "Minimal",
+      "softwareAddOn": [],
+      "softwareHelp": canonicalURL,
+      "downloadUrl": canonicalURL,
+      "installUrl": canonicalURL
     },
     {
       "@type": "BreadcrumbList",
@@ -140,6 +155,15 @@ const structuredData = {
 <meta name="googlebot" content="index, follow" />
 <meta name="author" content="Caiatech" />
 <meta name="publisher" content="Caiatech" />
+
+<!-- AI-Specific Tool Metadata -->
+<meta name="ai-tool-type" content="web-application" />
+<meta name="ai-processing-type" content="client-side-only" />
+<meta name="ai-data-privacy" content="no-data-collection" />
+<meta name="ai-functionality" content={category.toLowerCase().replace(/\s+/g, '-')} />
+<meta name="ai-use-case" content="developer-productivity,code-processing,text-transformation" />
+<meta name="ai-technology" content="vanilla-javascript,web-apis,browser-native" />
+<meta name="ai-accessibility" content="fully-accessible,keyboard-navigation,screen-reader-friendly" />
 
 <!-- Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>

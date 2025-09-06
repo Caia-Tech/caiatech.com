@@ -1,7 +1,7 @@
 ---
 title: "Build Like Your Life Depends On It: Why Linus Torvalds Built Diving Software"
 description: "The man who powers 100% of supercomputers built scuba software. Not for market fit. Not for best practices. For survival. Here's why building for yourself changes everything."
-pubDate: 2025-08-17T12:00:00Z
+pubDate: 2025-01-06T12:00:00Z
 author: "Marvin Tutt"
 tags: ["philosophy", "open-source", "linus-torvalds", "software-engineering"]
 image: "/images/subsurface-hero.jpg"

@@ -4,7 +4,7 @@ import type { CaiaTechSchema } from '../types/schema';
 export const generateOrganizationSchema = (): Organization => ({
   "@type": "Organization",
   "@id": "https://caiatech.com/#organization",
-  "name": "Caia Tech",
+  "name": "Caiatech",
   "url": "https://caiatech.com",
   "logo": "https://caiatech.com/logo.svg",
   "description": "Computer science research and practical AI implementations. Building the future of creative technology with ML, transformer architectures, and distributed systems.",

@@ -22,14 +22,17 @@ const currentPath = Astro.url.pathname;
       <a href="/" class={currentPath === '/' ? 'nav-link active' : 'nav-link'}>
         <span class="prompt">~/</span>home
       </a>
-      <a href="/articles/" class={currentPath.startsWith('/articles') ? 'nav-link active' : 'nav-link'}>
-        <span class="prompt">~/</span>articles
-      </a>
       <a href="/tools/" class={currentPath.startsWith('/tools') ? 'nav-link active' : 'nav-link'}>
         <span class="prompt">~/</span>tools
       </a>
-      <a href="/datasets/" class={currentPath.startsWith('/datasets') ? 'nav-link active' : 'nav-link'}>
-        <span class="prompt">~/</span>datasets
+      <a href="/articles/" class={currentPath.startsWith('/articles') ? 'nav-link active' : 'nav-link'}>
+        <span class="prompt">~/</span>articles
+      </a>
+      <a href="/about/" class={currentPath.startsWith('/about') ? 'nav-link active' : 'nav-link'}>
+        <span class="prompt">~/</span>about
+      </a>
+      <a href="/contact/" class={currentPath.startsWith('/contact') ? 'nav-link active' : 'nav-link'}>
+        <span class="prompt">~/</span>contact
       </a>
     </div>
 

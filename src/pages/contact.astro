@@ -1,0 +1,648 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Terminal from '../components/Terminal.astro';
+
+const contactMethods = [
+  {
+    icon: "📧",
+    title: "Email",
+    value: "owner@caiatech.com",
+    link: "mailto:owner@caiatech.com",
+    description: "Direct email for inquiries"
+  },
+  {
+    icon: "🐙",
+    title: "GitHub",
+    value: "@caiatech",
+    link: "https://github.com/caiatech",
+    description: "Open source contributions"
+  },
+  {
+    icon: "🐦",
+    title: "Twitter",
+    value: "@caiatech",
+    link: "https://twitter.com/caiatech",
+    description: "Updates and announcements"
+  },
+  {
+    icon: "💼",
+    title: "LinkedIn",
+    value: "Caiatech",
+    link: "https://linkedin.com/company/caiatech",
+    description: "Professional network"
+  }
+];
+---
+
+<BaseLayout 
+  title="Contact Caiatech - Get in Touch"
+  description="Contact Caiatech for research collaborations, technical inquiries, or to learn more about our developer tools and AI research."
+  canonical="https://caiatech.com/contact"
+>
+  <div class="contact-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <span class="control red"></span>
+            <span class="control yellow"></span>
+            <span class="control green"></span>
+          </div>
+          <span class="terminal-title">CONTACT://caiatech</span>
+        </div>
+        <div class="terminal-body">
+          <div class="typing-animation">
+            <p class="prompt">$ <span class="command">connect --with caiatech</span></p>
+            <div class="output">
+              <h1 class="glitch" data-text="Get in Touch">Get in Touch</h1>
+              <p class="tagline">Let's build the future of developer tools together</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+      <Terminal title="CONNECT" icon="🌐">
+        <div class="methods-grid">
+          {contactMethods.map((method) => (
+            <a href={method.link} class="method-card" target="_blank" rel="noopener">
+              <span class="method-icon">{method.icon}</span>
+              <h3>{method.title}</h3>
+              <p class="value">{method.value}</p>
+              <p class="description">{method.description}</p>
+            </a>
+          ))}
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+      <Terminal title="MESSAGE" icon="✉️">
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">
+              <span class="prompt">$</span> Name <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              placeholder="John Doe"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              <span class="prompt">$</span> Email <span class="required">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="john@example.com"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company">
+              <span class="prompt">$</span> Company/Organization
+            </label>
+            <input 
+              type="text" 
+              id="company" 
+              name="company" 
+              placeholder="Acme Corp"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">
+              <span class="prompt">$</span> Subject <span class="required">*</span>
+            </label>
+            <select id="subject" name="subject" required class="form-input">
+              <option value="">Select a topic...</option>
+              <option value="research">Research Collaboration</option>
+              <option value="tools">Developer Tools Inquiry</option>
+              <option value="technical">Technical Support</option>
+              <option value="business">Business Partnership</option>
+              <option value="opensource">Open Source Contribution</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              <span class="prompt">$</span> Message <span class="required">*</span>
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              required 
+              rows="6"
+              placeholder="Tell us about your project or inquiry..."
+              class="form-input"
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-icon">→</span>
+            </button>
+            <p class="form-note">
+              <span class="icon">🔒</span>
+              Your information is secure and will never be shared.
+            </p>
+          </div>
+
+          <div id="formStatus" class="form-status hidden"></div>
+        </form>
+      </Terminal>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <Terminal title="FAQ" icon="❓">
+        <div class="faq-content">
+          <details class="faq-item">
+            <summary>What kind of research does Caiatech conduct?</summary>
+            <p>
+              We focus on natural language processing, AI-web integration, privacy-preserving computing, 
+              and developer experience research. Our goal is to bridge the gap between AI systems and 
+              web developers.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Are your tools really free?</summary>
+            <p>
+              Yes! All our developer tools are 100% free to use. They run entirely in your browser 
+              with no data collection or server costs. We're committed to providing accessible tools 
+              for the developer community.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I contribute to your open source projects?</summary>
+            <p>
+              We welcome contributions! Check out our GitHub repositories, read the contribution 
+              guidelines, and feel free to submit pull requests or open issues. You can also reach 
+              out directly for larger collaboration ideas.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do you offer consulting or custom development?</summary>
+            <p>
+              We occasionally take on consulting projects that align with our research interests. 
+              Please describe your project in detail using the contact form above, and we'll get 
+              back to you if there's a good fit.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do you ensure user privacy?</summary>
+            <p>
+              All our tools run entirely in your browser using client-side JavaScript. No data is 
+              ever transmitted to servers, we don't use cookies or analytics, and there's no user 
+              tracking of any kind. Your data stays on your device.
+            </p>
+          </details>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Response Time -->
+    <section class="response-section">
+      <Terminal title="RESPONSE_TIME" icon="⏱️">
+        <div class="response-content">
+          <h2>We'll Get Back to You Soon</h2>
+          <p>
+            We typically respond to inquiries within <strong>24-48 hours</strong> during business days.
+            For urgent technical issues, please include "URGENT" in your subject line.
+          </p>
+          
+          <div class="availability">
+            <div class="status-indicator">
+              <span class="status-dot"></span>
+              <span>Currently accepting new inquiries</span>
+            </div>
+            <p class="timezone">Response times based on PST (UTC-8)</p>
+          </div>
+        </div>
+      </Terminal>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    margin-bottom: 3rem;
+  }
+
+  .terminal-window {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .terminal-header {
+    background: linear-gradient(90deg, rgba(42, 42, 43, 1) 0%, rgba(26, 26, 27, 1) 100%);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .control.red { background: #ff5f57; }
+  .control.yellow { background: #ffbd2e; }
+  .control.green { background: #28ca42; }
+
+  .terminal-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .terminal-body {
+    padding: 2rem;
+  }
+
+  .prompt {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+  }
+
+  .command {
+    color: var(--color-text);
+  }
+
+  .output h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+  }
+
+  /* Contact Methods */
+  .methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .method-card {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.3s;
+  }
+
+  .method-card:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+  }
+
+  .method-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .method-card h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .value {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Contact Form */
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    font-family: var(--font-mono);
+  }
+
+  .required {
+    color: var(--color-accent);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 6px;
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+  }
+
+  .form-input::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.5;
+  }
+
+  textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .submit-btn:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+  }
+
+  .btn-icon {
+    transition: transform 0.3s;
+  }
+
+  .submit-btn:hover .btn-icon {
+    transform: translateX(5px);
+  }
+
+  .form-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+  }
+
+  /* Form Status */
+  .form-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+  }
+
+  .form-status.hidden {
+    display: none;
+  }
+
+  .form-status.success {
+    background: rgba(40, 202, 66, 0.1);
+    border: 1px solid rgba(40, 202, 66, 0.3);
+    color: #28ca42;
+  }
+
+  .form-status.error {
+    background: rgba(255, 95, 87, 0.1);
+    border: 1px solid rgba(255, 95, 87, 0.3);
+    color: #ff5f57;
+  }
+
+  /* FAQ Section */
+  .faq-content {
+    padding: 1rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: 1rem;
+    cursor: pointer;
+    color: var(--color-text);
+    font-weight: 500;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+  }
+
+  .faq-item summary:hover {
+    background: rgba(0, 212, 255, 0.05);
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    padding: 0 1rem 1rem 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Response Section */
+  .response-content {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .response-content h2 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+  }
+
+  .availability {
+    margin-top: 1.5rem;
+  }
+
+  .status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    background: #28ca42;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(40, 202, 66, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(40, 202, 66, 0);
+    }
+  }
+
+  .timezone {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 1rem;
+    }
+
+    .methods-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-note {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  // Handle form submission
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  const formStatus = document.getElementById('formStatus');
+  
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (!formStatus) return;
+      
+      // Get form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`[Contact Form] ${data.subject || 'Inquiry'}`);
+      const body = encodeURIComponent(`
+Name: ${data.name}
+Email: ${data.email}
+Company: ${data.company || 'Not provided'}
+Subject: ${data.subject || 'Not provided'}
+
+Message:
+${data.message}
+
+---
+Sent via Caiatech.com contact form
+      `.trim());
+      
+      const mailtoLink = `mailto:owner@caiatech.com?subject=${subject}&body=${body}`;
+      
+      // Show instructions to user
+      formStatus.className = 'form-status success';
+      formStatus.innerHTML = `
+        <p><strong>Opening your email client...</strong></p>
+        <p>If your email doesn't open automatically, please send your message to:</p>
+        <p><strong>owner@caiatech.com</strong></p>
+        <p>Or <a href="${mailtoLink}" style="color: var(--color-accent);">click here to send manually</a></p>
+      `;
+      formStatus.classList.remove('hidden');
+      
+      // Open mailto link
+      window.location.href = mailtoLink;
+    });
+  }
+</script>

@@ -1,0 +1,571 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Terminal from '../components/Terminal.astro';
+
+const lastUpdated = new Date().toLocaleDateString('en-US', { 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric' 
+});
+---
+
+<BaseLayout 
+  title="Terms of Service - Caiatech"
+  description="Terms of service for using Caiatech's developer tools and website. Free to use, provided as-is, with no warranties."
+  canonical="https://caiatech.com/terms"
+>
+  <div class="terms-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <span class="control red"></span>
+            <span class="control yellow"></span>
+            <span class="control green"></span>
+          </div>
+          <span class="terminal-title">LEGAL://terms</span>
+        </div>
+        <div class="terminal-body">
+          <div class="typing-animation">
+            <p class="prompt">$ <span class="command">cat /etc/terms.txt</span></p>
+            <div class="output">
+              <h1 class="glitch" data-text="Terms of Service">Terms of Service</h1>
+              <p class="tagline">Simple terms for free, open tools</p>
+              <p class="last-updated">Last updated: {lastUpdated}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary-section">
+      <Terminal title="SUMMARY" icon="📝">
+        <div class="summary-content">
+          <h2>Plain English Summary</h2>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span class="icon">✅</span>
+              <div>
+                <h3>Free to Use</h3>
+                <p>All tools are free, no hidden costs</p>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="icon">🚫</span>
+              <div>
+                <h3>No Warranties</h3>
+                <p>Tools provided "as-is" without guarantees</p>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="icon">⚖️</span>
+              <div>
+                <h3>Your Responsibility</h3>
+                <p>You're responsible for how you use tools</p>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="icon">🔒</span>
+              <div>
+                <h3>Your Data</h3>
+                <p>We never see or store your data</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Full Terms -->
+    <section class="terms-section">
+      <Terminal title="TERMS" icon="⚖️">
+        <div class="terms-content">
+          <div class="section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By accessing or using any services provided by Caiatech ("we", "us", or "our") 
+              through the caiatech.com website, you agree to be bound by these Terms of Service 
+              ("Terms"). If you disagree with any part of these terms, you do not have permission 
+              to access our services.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>2. Description of Service</h2>
+            <p>
+              Caiatech provides free, browser-based developer tools and resources. Our services include:
+            </p>
+            <ul>
+              <li>Web-based developer tools (formatters, converters, generators, etc.)</li>
+              <li>Technical articles and documentation</li>
+              <li>Open source code and resources</li>
+              <li>Research and educational content</li>
+            </ul>
+            <p>
+              All tools operate entirely within your browser using client-side processing. 
+              We do not store, transmit, or have access to any data you process using our tools.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>3. Use License</h2>
+            <p>We grant you a non-exclusive, non-transferable, revocable license to:</p>
+            <ul>
+              <li>Access and use our tools for personal or commercial purposes</li>
+              <li>Modify and distribute our open source code under its respective license</li>
+              <li>Reference and link to our content with proper attribution</li>
+            </ul>
+            <p class="highlight">
+              <strong>Restrictions:</strong> You may not:
+            </p>
+            <ul>
+              <li>Claim our tools or content as your own work</li>
+              <li>Use our service for illegal or malicious purposes</li>
+              <li>Attempt to reverse engineer closed-source portions</li>
+              <li>Overload our servers with automated requests</li>
+              <li>Misrepresent your affiliation with Caiatech</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>4. Disclaimer of Warranties</h2>
+            <div class="warning-box">
+              <p>
+                <strong>IMPORTANT:</strong> Our services are provided "AS IS" and "AS AVAILABLE" 
+                without any warranties of any kind, either express or implied.
+              </p>
+            </div>
+            <p>We do not warrant that:</p>
+            <ul>
+              <li>The service will be uninterrupted or error-free</li>
+              <li>The tools will produce accurate or complete results</li>
+              <li>The service will meet your specific requirements</li>
+              <li>Any errors in the service will be corrected</li>
+            </ul>
+            <p>
+              You understand and agree that you use our services at your own risk. Any material 
+              or data processed through our service is at your sole discretion and risk.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>5. Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by law, Caiatech and its affiliates, officers, 
+              employees, agents, partners, and licensors shall not be liable for any:
+            </p>
+            <ul>
+              <li>Indirect, incidental, special, consequential, or punitive damages</li>
+              <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+              <li>Damages resulting from your use or inability to use the service</li>
+              <li>Unauthorized access to or alteration of your transmissions or data</li>
+              <li>Statements or conduct of any third party on the service</li>
+            </ul>
+            <p class="highlight">
+              Our total liability shall not exceed $0.00 USD, as our services are provided free of charge.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>6. User Responsibilities</h2>
+            <p>You are responsible for:</p>
+            <ul>
+              <li>
+                <strong>Your Data:</strong> Ensuring you have the right to process any data 
+                through our tools
+              </li>
+              <li>
+                <strong>Compliance:</strong> Complying with all applicable laws and regulations
+              </li>
+              <li>
+                <strong>Security:</strong> Maintaining the security of your own systems and data
+              </li>
+              <li>
+                <strong>Accuracy:</strong> Verifying the output of our tools for your use case
+              </li>
+              <li>
+                <strong>Backups:</strong> Keeping backups of any important data
+              </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>7. Intellectual Property</h2>
+            <p>
+              <strong>Our Content:</strong> Unless otherwise stated, all content on caiatech.com 
+              is owned by or licensed to Caiatech. This includes but is not limited to:
+            </p>
+            <ul>
+              <li>Website design and layout</li>
+              <li>Original articles and documentation</li>
+              <li>Tool interfaces and user experience</li>
+              <li>Logos and branding elements</li>
+            </ul>
+            <p>
+              <strong>Your Content:</strong> You retain all rights to any data you process through 
+              our tools. We do not claim any ownership of your input or output data.
+            </p>
+            <p>
+              <strong>Open Source:</strong> Portions of our code are released under open source 
+              licenses. Please refer to the specific license files in our repositories.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>8. Privacy</h2>
+            <p>
+              Your use of our services is also governed by our <a href="/privacy">Privacy Policy</a>. 
+              In summary: we don't collect, store, or track any user data. All processing happens 
+              in your browser.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>9. Modifications to Service</h2>
+            <p>We reserve the right to:</p>
+            <ul>
+              <li>Modify or discontinue any part of the service at any time</li>
+              <li>Change these Terms at any time by updating this page</li>
+              <li>Add or remove features from our tools</li>
+              <li>Change the open source status of our code</li>
+            </ul>
+            <p>
+              Continued use of our service after any changes constitutes acceptance of the new terms.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>10. Termination</h2>
+            <p>
+              Since our services don't require accounts, there's nothing to terminate. You can 
+              stop using our services at any time. We may also block access to our services if 
+              we detect abuse or violations of these terms.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>11. Indemnification</h2>
+            <p>
+              You agree to indemnify and hold harmless Caiatech and its affiliates from any 
+              claims, damages, losses, liabilities, costs, and expenses arising from your use 
+              of our services or violation of these Terms.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>12. Governing Law</h2>
+            <p>
+              These Terms shall be governed by and construed in accordance with the laws of 
+              the United States and the State of California, without regard to its conflict 
+              of law provisions.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>13. Severability</h2>
+            <p>
+              If any provision of these Terms is held to be invalid or unenforceable, the 
+              remaining provisions will continue in full force and effect.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>14. Contact Information</h2>
+            <p>
+              For questions about these Terms of Service, please contact us at:
+            </p>
+            <ul class="contact-info">
+              <li>Email: <a href="mailto:owner@caiatech.com">owner@caiatech.com</a></li>
+              <li>Website: <a href="/contact">caiatech.com/contact</a></li>
+              <li>GitHub: <a href="https://github.com/caiatech" target="_blank" rel="noopener">github.com/caiatech</a></li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>15. Entire Agreement</h2>
+            <p>
+              These Terms constitute the entire agreement between you and Caiatech regarding 
+              the use of our services and supersede any prior agreements.
+            </p>
+          </div>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Acceptance Section -->
+    <section class="acceptance-section">
+      <Terminal title="ACCEPTANCE" icon="✅">
+        <div class="acceptance-content">
+          <h2>By Using Our Services</h2>
+          <p>
+            By accessing caiatech.com or using any of our tools, you acknowledge that you have 
+            read, understood, and agree to be bound by these Terms of Service.
+          </p>
+          <div class="acceptance-note">
+            <p>
+              <strong>Note:</strong> These terms are designed to be fair and transparent. We're 
+              providing free tools with no hidden agenda. Use them responsibly, and we'll keep 
+              building great things together.
+            </p>
+          </div>
+        </div>
+      </Terminal>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .terms-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    margin-bottom: 3rem;
+  }
+
+  .terminal-window {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .terminal-header {
+    background: linear-gradient(90deg, rgba(42, 42, 43, 1) 0%, rgba(26, 26, 27, 1) 100%);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .control.red { background: #ff5f57; }
+  .control.yellow { background: #ffbd2e; }
+  .control.green { background: #28ca42; }
+
+  .terminal-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .terminal-body {
+    padding: 2rem;
+  }
+
+  .prompt {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    margin-bottom: 1rem;
+  }
+
+  .command {
+    color: var(--color-text);
+  }
+
+  .output h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .last-updated {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Summary Section */
+  .summary-content {
+    padding: 1rem;
+  }
+
+  .summary-content h2 {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .summary-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+  }
+
+  .summary-item .icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .summary-item h3 {
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .summary-item p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+
+  /* Terms Content */
+  .terms-content {
+    padding: 1rem;
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section h2 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+  }
+
+  .section p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--color-text-secondary);
+  }
+
+  .section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+  }
+
+  .section ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .section ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  .highlight {
+    background: rgba(0, 212, 255, 0.05);
+    border-left: 3px solid var(--color-accent);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+  }
+
+  .highlight strong {
+    color: var(--color-accent);
+  }
+
+  .warning-box {
+    background: rgba(255, 189, 46, 0.1);
+    border: 1px solid rgba(255, 189, 46, 0.3);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .warning-box strong {
+    color: #ffbd2e;
+  }
+
+  .contact-info {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+
+  /* Acceptance Section */
+  .acceptance-content {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .acceptance-content h2 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+  }
+
+  .acceptance-note {
+    background: rgba(40, 202, 66, 0.1);
+    border: 1px solid rgba(40, 202, 66, 0.3);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .acceptance-note strong {
+    color: #28ca42;
+  }
+
+  /* Links */
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .terms-container {
+      padding: 1rem;
+    }
+
+    .output h1 {
+      font-size: 2rem;
+    }
+
+    .summary-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+  }
+</style>

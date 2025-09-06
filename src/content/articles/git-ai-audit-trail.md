@@ -1,7 +1,7 @@
 ---
 title: "Why Git Is the Perfect Audit Trail for AI Systems"
 description: "How to get a tamper‑evident, legally defensible record of AI behavior using tools you already own"
-pubDate: 2025-08-21T12:00:00Z
+pubDate: 2025-01-06T12:00:00Z
 author: "Marvin Tutt"
 tags: ["AI", "Git", "Audit", "MLOps", "Compliance", "Forensics", "DevOps"]
 featured: true

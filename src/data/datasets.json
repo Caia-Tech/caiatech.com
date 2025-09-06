@@ -1,38 +1,248 @@
 [
   {
+    "id": "caia-math",
+    "name": "caia-math",
+    "title": "Caia Math Dataset",
+    "description": "A comprehensive caia math dataset for AI/ML research and development. This dataset contains high-quality, curated data designed for training and evaluation of machine learning models.\n\nThe dataset is available in multiple formats including JSON, JSONL, and Parquet to support different workflows and tools. All data is carefully validated and documented to ensure reliability and practical utility.\n\nReleased under permissive licensing for both research and commercial use.",
+    "files": [
+      {
+        "name": "caia-math.json",
+        "path": "caia-math/caia-math.json",
+        "size": 1249411,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-math/caia-math.json"
+      },
+      {
+        "name": "caia-math.jsonl",
+        "path": "caia-math/caia-math.jsonl",
+        "size": 1150973,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-math/caia-math.jsonl"
+      },
+      {
+        "name": "caia-math.parquet",
+        "path": "caia-math/caia-math.parquet",
+        "size": 527443,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-math/caia-math.parquet"
+      }
+    ],
+    "size": {
+      "json": "1.2 MB",
+      "jsonl": "1.1 MB",
+      "parquet": "515.1 KB",
+      "total": "2.8 MB"
+    },
+    "metadata": {
+      "license": "CC0 1.0 Universal",
+      "lastUpdated": "September 6, 2025",
+      "version": "1.0.0",
+      "tags": []
+    },
+    "links": {
+      "github": "https://github.com/Caia-Tech/epic-datasets"
+    },
+    "badge": "New"
+  },
+  {
+    "id": "caia-reasoning",
+    "name": "caia-reasoning",
+    "title": "Caia Reasoning Dataset",
+    "description": "A comprehensive caia reasoning dataset for AI/ML research and development. This dataset contains high-quality, curated data designed for training and evaluation of machine learning models.\n\nThe dataset is available in multiple formats including JSON, JSONL, and Parquet to support different workflows and tools. All data is carefully validated and documented to ensure reliability and practical utility.\n\nReleased under permissive licensing for both research and commercial use.",
+    "files": [
+      {
+        "name": "caia-reasoning.json",
+        "path": "caia-reasoning/caia-reasoning.json",
+        "size": 2598044,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-reasoning/caia-reasoning.json"
+      },
+      {
+        "name": "caia-reasoning.jsonl",
+        "path": "caia-reasoning/caia-reasoning.jsonl",
+        "size": 2036278,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-reasoning/caia-reasoning.jsonl"
+      },
+      {
+        "name": "caia-reasoning.parquet",
+        "path": "caia-reasoning/caia-reasoning.parquet",
+        "size": 699928,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-reasoning/caia-reasoning.parquet"
+      }
+    ],
+    "size": {
+      "json": "2.5 MB",
+      "jsonl": "1.9 MB",
+      "parquet": "683.5 KB",
+      "total": "5.1 MB"
+    },
+    "metadata": {
+      "license": "CC0 1.0 Universal",
+      "lastUpdated": "September 6, 2025",
+      "version": "1.0.0",
+      "tags": []
+    },
+    "links": {
+      "github": "https://github.com/Caia-Tech/epic-datasets"
+    },
+    "badge": "New"
+  },
+  {
+    "id": "caia-system-design",
+    "name": "caia-system-design",
+    "title": "Caia System Design Dataset",
+    "description": "A comprehensive caia system design dataset for AI/ML research and development. This dataset contains high-quality, curated data designed for training and evaluation of machine learning models.\n\nThe dataset is available in multiple formats including JSON, JSONL, and Parquet to support different workflows and tools. All data is carefully validated and documented to ensure reliability and practical utility.\n\nReleased under permissive licensing for both research and commercial use.",
+    "files": [
+      {
+        "name": "caia-system-design.json",
+        "path": "caia-system-design/caia-system-design.json",
+        "size": 8255042,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-system-design/caia-system-design.json"
+      },
+      {
+        "name": "caia-system-design.jsonl",
+        "path": "caia-system-design/caia-system-design.jsonl",
+        "size": 8181802,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-system-design/caia-system-design.jsonl"
+      },
+      {
+        "name": "caia-system-design.parquet",
+        "path": "caia-system-design/caia-system-design.parquet",
+        "size": 3663349,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/caia-system-design/caia-system-design.parquet"
+      }
+    ],
+    "size": {
+      "json": "7.9 MB",
+      "jsonl": "7.8 MB",
+      "parquet": "3.5 MB",
+      "total": "19.2 MB"
+    },
+    "metadata": {
+      "license": "CC0 1.0 Universal",
+      "lastUpdated": "September 6, 2025",
+      "version": "1.0.0",
+      "tags": []
+    },
+    "links": {
+      "github": "https://github.com/Caia-Tech/epic-datasets"
+    },
+    "badge": "New"
+  },
+  {
     "id": "go-epic",
     "name": "go-epic",
     "title": "Go Epic Dataset",
     "description": "A comprehensive Go programming dataset containing examples from basic syntax to distributed systems and algorithms. Each entry includes working code with explanations covering why specific patterns are used and how they apply to real development.\n\nThe dataset spans goroutines and channels, HTTP servers, database patterns, Kubernetes operators, gRPC services, and distributed systems architecture. It includes algorithm problems with multiple solution approaches and performance analysis.\n\nUses a minimal JSONL format with three fields per entry: instruction, output, and topic. Each example combines explanation and code in a single integrated teaching unit.\n\nReleased under CC0 1.0 Universal license. Available on GitHub, Hugging Face, and caiatech.com.",
     "files": [
       {
-        "name": "go-epic-dataset.json",
-        "path": "epic-datasets/go-epic/go-epic-dataset.json",
-        "size": 3320598,
-        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/epic-datasets/go-epic/go-epic-dataset.json"
+        "name": "go-epic.json",
+        "path": "go-epic/go-epic.json",
+        "size": 17463793,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/go-epic/go-epic.json"
       },
       {
-        "name": "go-epic-dataset.jsonl",
-        "path": "epic-datasets/go-epic/go-epic-dataset.jsonl",
-        "size": 3327456,
-        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/epic-datasets/go-epic/go-epic-dataset.jsonl"
+        "name": "go-epic.jsonl",
+        "path": "go-epic/go-epic.jsonl",
+        "size": 17229516,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/go-epic/go-epic.jsonl"
       },
       {
-        "name": "go-epic-dataset.parquet",
-        "path": "epic-datasets/go-epic/go-epic-dataset.parquet",
-        "size": 1462401,
-        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/epic-datasets/go-epic/go-epic-dataset.parquet"
+        "name": "go-epic.parquet",
+        "path": "go-epic/go-epic.parquet",
+        "size": 6806470,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/go-epic/go-epic.parquet"
       }
     ],
     "size": {
-      "json": "3.2 MB",
-      "jsonl": "3.2 MB",
-      "parquet": "1.4 MB",
-      "total": "7.7 MB"
+      "json": "16.7 MB",
+      "jsonl": "16.4 MB",
+      "parquet": "6.5 MB",
+      "total": "39.6 MB"
     },
     "metadata": {
       "license": "CC0 1.0 Universal",
-      "lastUpdated": "August 21, 2025",
+      "lastUpdated": "September 6, 2025",
+      "version": "1.0.0",
+      "tags": []
+    },
+    "links": {
+      "github": "https://github.com/Caia-Tech/epic-datasets"
+    },
+    "badge": "New"
+  },
+  {
+    "id": "python-epic",
+    "name": "python-epic",
+    "title": "Python Epic Dataset",
+    "description": "A comprehensive python epic dataset for AI/ML research and development. This dataset contains high-quality, curated data designed for training and evaluation of machine learning models.\n\nThe dataset is available in multiple formats including JSON, JSONL, and Parquet to support different workflows and tools. All data is carefully validated and documented to ensure reliability and practical utility.\n\nReleased under permissive licensing for both research and commercial use.",
+    "files": [
+      {
+        "name": "python-epic.json",
+        "path": "python-epic/python-epic.json",
+        "size": 6063462,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/python-epic/python-epic.json"
+      },
+      {
+        "name": "python-epic.jsonl",
+        "path": "python-epic/python-epic.jsonl",
+        "size": 6027983,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/python-epic/python-epic.jsonl"
+      },
+      {
+        "name": "python-epic.parquet",
+        "path": "python-epic/python-epic.parquet",
+        "size": 2362932,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/python-epic/python-epic.parquet"
+      }
+    ],
+    "size": {
+      "json": "5.8 MB",
+      "jsonl": "5.7 MB",
+      "parquet": "2.3 MB",
+      "total": "13.8 MB"
+    },
+    "metadata": {
+      "license": "CC0 1.0 Universal",
+      "lastUpdated": "September 6, 2025",
+      "version": "1.0.0",
+      "tags": []
+    },
+    "links": {
+      "github": "https://github.com/Caia-Tech/epic-datasets"
+    },
+    "badge": "New"
+  },
+  {
+    "id": "rust-epic",
+    "name": "rust-epic",
+    "title": "Rust Epic Dataset",
+    "description": "A comprehensive rust epic dataset for AI/ML research and development. This dataset contains high-quality, curated data designed for training and evaluation of machine learning models.\n\nThe dataset is available in multiple formats including JSON, JSONL, and Parquet to support different workflows and tools. All data is carefully validated and documented to ensure reliability and practical utility.\n\nReleased under permissive licensing for both research and commercial use.",
+    "files": [
+      {
+        "name": "rust-epic.json",
+        "path": "rust-epic/rust-epic.json",
+        "size": 1450775,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/rust-epic/rust-epic.json"
+      },
+      {
+        "name": "rust-epic.jsonl",
+        "path": "rust-epic/rust-epic.jsonl",
+        "size": 1441869,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/rust-epic/rust-epic.jsonl"
+      },
+      {
+        "name": "rust-epic.parquet",
+        "path": "rust-epic/rust-epic.parquet",
+        "size": 528797,
+        "download_url": "https://raw.githubusercontent.com/Caia-Tech/epic-datasets/master/rust-epic/rust-epic.parquet"
+      }
+    ],
+    "size": {
+      "json": "1.4 MB",
+      "jsonl": "1.4 MB",
+      "parquet": "516.4 KB",
+      "total": "3.3 MB"
+    },
+    "metadata": {
+      "license": "CC0 1.0 Universal",
+      "lastUpdated": "September 6, 2025",
       "version": "1.0.0",
       "tags": []
     },

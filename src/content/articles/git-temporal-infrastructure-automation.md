@@ -1,7 +1,7 @@
 ---
 title: "Configuration Management and Workflow Orchestration with Git and Temporal"
 description: "How Git and Temporal combine to create powerful infrastructure patterns for configuration management, workflow orchestration, and infrastructure automation using open source tools."
-pubDate: 2025-08-06T12:00:00Z
+pubDate: 2025-01-06T12:00:00Z
 author: "Marvin Tutt"
 tags: ["DevOps", "Infrastructure", "Git", "Temporal", "Automation", "Open Source", "Workflow Orchestration", "Configuration Management"]
 featured: true

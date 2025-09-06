@@ -1,0 +1,198 @@
+---
+export interface Props {
+  toolName: string;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const { toolName, faqs } = Astro.props;
+
+// Default FAQs for common tools if none provided
+const defaultFAQs = {
+  'base64': [
+    {
+      question: 'What is Base64 encoding?',
+      answer: 'Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It\'s commonly used for encoding data in email, URLs, and storing complex data in XML or JSON.'
+    },
+    {
+      question: 'When should I use Base64 encoding?',
+      answer: 'Use Base64 when you need to transmit binary data over media designed to handle text, such as embedding images in HTML/CSS, sending files via JSON APIs, or storing binary data in databases that only support text.'
+    },
+    {
+      question: 'Is Base64 encoding secure?',
+      answer: 'No, Base64 is not encryption. It\'s an encoding scheme that can be easily reversed. Never use Base64 alone for securing sensitive data - always use proper encryption methods.'
+    }
+  ],
+  'json': [
+    {
+      question: 'What is JSON formatting?',
+      answer: 'JSON (JavaScript Object Notation) formatting arranges JSON data with proper indentation, line breaks, and spacing to make it human-readable and easier to debug.'
+    },
+    {
+      question: 'How do I validate JSON syntax?',
+      answer: 'Our JSON tool automatically validates syntax as you type, highlighting errors and showing their location. Common issues include missing commas, unclosed brackets, and invalid escape sequences.'
+    },
+    {
+      question: 'What\'s the difference between JSON and JavaScript objects?',
+      answer: 'JSON is a text format with stricter rules: keys must be strings in double quotes, no trailing commas, no comments, and limited data types (string, number, boolean, null, array, object).'
+    }
+  ],
+  'hash': [
+    {
+      question: 'What hashing algorithms are supported?',
+      answer: 'We support MD5, SHA-1, SHA-256, SHA-384, SHA-512, and other common hashing algorithms. Each provides different levels of security and output sizes.'
+    },
+    {
+      question: 'Can I reverse a hash to get the original text?',
+      answer: 'No, cryptographic hash functions are one-way functions. They\'re designed to be irreversible. You cannot decrypt a hash to retrieve the original input.'
+    },
+    {
+      question: 'Which hash algorithm should I use?',
+      answer: 'For security purposes, use SHA-256 or SHA-512. MD5 and SHA-1 are considered broken and should only be used for non-security purposes like checksums.'
+    }
+  ]
+};
+
+const toolFAQs = faqs || defaultFAQs[toolName.toLowerCase()] || [
+  {
+    question: `What is the ${toolName} tool used for?`,
+    answer: `The ${toolName} tool helps developers work with ${toolName.toLowerCase()} operations efficiently. It provides a clean, terminal-style interface for processing and transforming data.`
+  },
+  {
+    question: `Is the ${toolName} tool free to use?`,
+    answer: `Yes, all Caia Tech tools are completely free to use. No registration, no limits, no hidden fees. We believe in open access to developer tools.`
+  },
+  {
+    question: `Does the ${toolName} tool store my data?`,
+    answer: `No, all processing happens locally in your browser. We don\'t store, transmit, or log any data you input into our tools. Your privacy is protected.`
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": toolFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<section class="tool-faq">
+  <h2 class="faq-title">
+    <span class="prompt">$</span> frequently_asked_questions
+  </h2>
+  
+  <div class="faq-list">
+    {toolFAQs.map((faq, index) => (
+      <details class="faq-item" open={index === 0}>
+        <summary class="faq-question">
+          <span class="prompt">?</span> {faq.question}
+        </summary>
+        <div class="faq-answer">
+          <span class="prompt">></span> {faq.answer}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<style>
+  .tool-faq {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .faq-title {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .faq-item:hover {
+    border-color: var(--color-accent);
+  }
+
+  .faq-question {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-text);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::before {
+    content: '+';
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] .faq-question::before {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-family: var(--font-sans);
+  }
+
+  .prompt {
+    color: var(--color-accent);
+    opacity: 0.7;
+    margin-right: 0.5rem;
+    font-family: var(--font-mono);
+  }
+
+  .faq-item:hover .prompt {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .tool-faq {
+      margin-top: 2rem;
+      padding: 1.5rem 0;
+    }
+
+    .faq-item {
+      padding: 0.75rem;
+    }
+  }
+</style>

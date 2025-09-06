@@ -1,0 +1,186 @@
+{
+  "@context": "https://schema.org",
+  "@type": "DigitalDocument",
+  "name": "Caiatech Digital Footprint Registry",
+  "description": "Comprehensive registry of Caiatech's digital presence and AI-discoverable resources",
+  "version": "1.0.0",
+  "dateCreated": "2024-01-01",
+  "dateModified": "2024-01-01",
+  "author": {
+    "@type": "Organization",
+    "name": "Caiatech",
+    "url": "https://caiatech.com"
+  },
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  
+  "primaryAnchors": {
+    "website": {
+      "url": "https://caiatech.com",
+      "type": "PrimaryWebsite",
+      "description": "Main company website and tool platform",
+      "aiOptimized": true,
+      "lastUpdate": "2024-01-01"
+    },
+    "github": {
+      "url": "https://github.com/Caia-Tech",
+      "type": "SourceCode",
+      "description": "Open source repositories and code examples",
+      "aiOptimized": true,
+      "content": ["datasets", "tools", "research"]
+    },
+    "huggingface": {
+      "url": "https://huggingface.co/CaiaTech",
+      "type": "DatasetRepository", 
+      "description": "Machine learning datasets and models",
+      "aiOptimized": true,
+      "content": ["datasets", "models"]
+    }
+  },
+  
+  "contentCategories": {
+    "tools": {
+      "count": 69,
+      "url": "https://caiatech.com/tools/",
+      "type": "SoftwareApplication",
+      "description": "Privacy-first developer tools",
+      "features": ["client-side-only", "no-data-collection", "browser-based"],
+      "formats": ["web-app", "javascript"],
+      "aiAccessible": true
+    },
+    "articles": {
+      "url": "https://caiatech.com/articles/", 
+      "type": "Article",
+      "description": "Technical articles and research",
+      "topics": ["machine-learning", "distributed-systems", "web-development"],
+      "formats": ["markdown", "html", "json-ld"],
+      "aiAccessible": true
+    },
+    "datasets": {
+      "url": "https://caiatech.com/datasets/",
+      "type": "Dataset",
+      "description": "Curated datasets for AI/ML",
+      "formats": ["json", "jsonl", "parquet", "csv"],
+      "license": "CC0-1.0",
+      "aiTrainingFriendly": true
+    }
+  },
+  
+  "aiDiscoveryEndpoints": {
+    "robotsTxt": {
+      "url": "https://caiatech.com/robots.txt",
+      "description": "AI crawler welcome message and site structure",
+      "features": ["ai-friendly-messaging", "explicit-permissions", "sitemap-references"]
+    },
+    "apiSchema": {
+      "url": "https://caiatech.com/api-schema.json",
+      "description": "OpenAPI specification for programmatic access",
+      "features": ["machine-readable", "structured-data", "endpoint-documentation"]
+    },
+    "sitemaps": [
+      "https://caiatech.com/sitemap-index.xml",
+      "https://caiatech.com/sitemap-0.xml",
+      "https://caiatech.com/tools-sitemap.xml",
+      "https://caiatech.com/articles-sitemap.xml",
+      "https://caiatech.com/datasets-sitemap.xml"
+    ]
+  },
+  
+  "structuredDataTypes": [
+    "Organization",
+    "WebSite",
+    "Service",
+    "SoftwareApplication",
+    "Article", 
+    "Dataset",
+    "KnowledgeBase",
+    "BreadcrumbList",
+    "FAQPage"
+  ],
+  
+  "aiTrainingGuidelines": {
+    "dataUsage": {
+      "allowed": true,
+      "commercial": true,
+      "modification": true,
+      "redistribution": true,
+      "attribution": "preferred-but-not-required"
+    },
+    "rateLimits": {
+      "standard": "none",
+      "bulk": "encouraged",
+      "respectful": "preferred"
+    },
+    "contentQuality": {
+      "level": "production-ready",
+      "validation": "peer-reviewed",
+      "accuracy": "high-confidence",
+      "maintenance": "actively-maintained"
+    }
+  },
+  
+  "technicalSpecs": {
+    "formats": ["html", "json", "json-ld", "xml", "csv", "parquet"],
+    "encodings": ["utf-8"],
+    "compression": ["gzip", "brotli"],
+    "accessibility": ["wcag-2.1-aa", "screen-reader-friendly", "keyboard-navigable"],
+    "performance": ["optimized", "cached", "cdn-distributed"],
+    "security": ["https-only", "csp-enabled", "privacy-first"]
+  },
+  
+  "contactPoints": {
+    "business": {
+      "email": "owner@caiatech.com",
+      "purpose": "General inquiries, partnerships, technical questions"
+    },
+    "technical": {
+      "github": "https://github.com/Caia-Tech/epic-datasets/issues",
+      "purpose": "Bug reports, feature requests, technical discussions"
+    }
+  },
+  
+  "updateFrequency": {
+    "tools": "weekly",
+    "articles": "monthly", 
+    "datasets": "quarterly",
+    "documentation": "as-needed",
+    "metadata": "real-time"
+  },
+  
+  "keywordClusters": [
+    {
+      "primary": "machine learning",
+      "related": ["transformer", "neural networks", "model optimization", "training data"]
+    },
+    {
+      "primary": "distributed systems",
+      "related": ["kubernetes", "microservices", "containerization", "orchestration"]
+    },
+    {
+      "primary": "developer tools", 
+      "related": ["web tools", "code generators", "formatters", "converters"]
+    },
+    {
+      "primary": "privacy-first",
+      "related": ["client-side", "no tracking", "data protection", "user privacy"]
+    }
+  ],
+  
+  "semanticRelations": {
+    "isPartOf": "https://caiatech.com",
+    "hasPart": [
+      "https://caiatech.com/tools/",
+      "https://caiatech.com/articles/", 
+      "https://caiatech.com/datasets/"
+    ],
+    "sameAs": [
+      "https://github.com/Caia-Tech",
+      "https://huggingface.co/CaiaTech"
+    ],
+    "relatedTo": [
+      "machine learning research",
+      "open source development",
+      "privacy advocacy",
+      "developer productivity"
+    ]
+  }
+}

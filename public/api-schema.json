@@ -1,0 +1,372 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Caiatech AI-Friendly API",
+    "version": "1.0.0",
+    "description": "Machine-readable API documentation designed specifically for AI systems and crawlers. Provides structured access to Caiatech's tools, datasets, and research content.",
+    "license": {
+      "name": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "contact": {
+      "name": "Caiatech API Support",
+      "email": "owner@caiatech.com",
+      "url": "https://caiatech.com/contact"
+    },
+    "x-ai-friendly": true,
+    "x-training-data-allowed": true,
+    "x-commercial-use": true,
+    "x-rate-limits": "none",
+    "x-authentication": "none-required"
+  },
+  "servers": [
+    {
+      "url": "https://caiatech.com/api",
+      "description": "Production API server"
+    }
+  ],
+  "paths": {
+    "/tools": {
+      "get": {
+        "summary": "List all developer tools",
+        "description": "Returns structured data about all available privacy-first developer tools",
+        "operationId": "getTools",
+        "responses": {
+          "200": {
+            "description": "List of tools with metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-ai-description": "Comprehensive list of web-based developer tools including code generators, formatters, converters, and utilities"
+      }
+    },
+    "/datasets": {
+      "get": {
+        "summary": "List all datasets",
+        "description": "Returns structured information about available datasets for AI/ML training and research",
+        "operationId": "getDatasets",
+        "responses": {
+          "200": {
+            "description": "List of datasets with metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dataset"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-ai-description": "Curated datasets in multiple formats (JSON, JSONL, Parquet) optimized for AI training"
+      }
+    },
+    "/articles": {
+      "get": {
+        "summary": "List all technical articles",
+        "description": "Returns structured metadata about technical articles and research papers",
+        "operationId": "getArticles",
+        "responses": {
+          "200": {
+            "description": "List of articles with metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Article"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-ai-description": "Technical articles covering ML, distributed systems, and software development"
+      }
+    },
+    "/search": {
+      "get": {
+        "summary": "Search across all content",
+        "description": "Search tools, articles, and datasets with structured results",
+        "operationId": "search",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Search query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Content type filter",
+            "schema": {
+              "type": "string",
+              "enum": ["tools", "articles", "datasets", "all"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResults"
+                }
+              }
+            }
+          }
+        },
+        "x-ai-description": "Full-text search with semantic understanding and structured results"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Tool": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique tool identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tool name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Tool description"
+          },
+          "category": {
+            "type": "string",
+            "description": "Tool category"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Tool URL"
+          },
+          "privacy": {
+            "type": "object",
+            "properties": {
+              "dataCollection": {
+                "type": "boolean",
+                "description": "Whether tool collects user data"
+              },
+              "clientSide": {
+                "type": "boolean", 
+                "description": "Whether processing is client-side only"
+              }
+            }
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of tool features"
+          }
+        },
+        "required": ["id", "name", "description", "url"]
+      },
+      "Dataset": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Dataset identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Dataset name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Dataset description"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatasetFile"
+            }
+          },
+          "size": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "string"
+              },
+              "json": {
+                "type": "string"
+              },
+              "jsonl": {
+                "type": "string"
+              },
+              "parquet": {
+                "type": "string"
+              }
+            }
+          },
+          "license": {
+            "type": "string",
+            "description": "Dataset license"
+          },
+          "downloads": {
+            "type": "integer",
+            "description": "Number of downloads"
+          }
+        },
+        "required": ["id", "name", "description", "files"]
+      },
+      "DatasetFile": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "download_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "format": {
+            "type": "string",
+            "enum": ["json", "jsonl", "parquet", "csv"]
+          }
+        },
+        "required": ["name", "size", "download_url", "format"]
+      },
+      "Article": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "publishedDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "readingTime": {
+            "type": "integer",
+            "description": "Estimated reading time in minutes"
+          }
+        },
+        "required": ["id", "title", "description", "url"]
+      },
+      "SearchResults": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchResult"
+            }
+          }
+        }
+      },
+      "SearchResult": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["tool", "article", "dataset"]
+          },
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "score": {
+            "type": "number",
+            "description": "Relevance score"
+          }
+        }
+      }
+    }
+  },
+  "x-ai-metadata": {
+    "content-types": [
+      "developer-tools",
+      "datasets",
+      "technical-articles",
+      "research-papers"
+    ],
+    "domains": [
+      "machine-learning",
+      "distributed-systems",
+      "web-development",
+      "data-science"
+    ],
+    "complexity-level": "intermediate-to-advanced",
+    "target-audience": [
+      "developers",
+      "researchers", 
+      "ai-engineers",
+      "data-scientists"
+    ],
+    "usage-rights": {
+      "commercial": true,
+      "training": true,
+      "modification": true,
+      "redistribution": true
+    },
+    "data-formats": [
+      "json",
+      "json-ld",
+      "csv",
+      "parquet",
+      "markdown"
+    ]
+  }
+}

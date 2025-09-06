@@ -1,7 +1,7 @@
 ---
 title: "How Git Creates Cryptographically Verifiable Evidence in the Age of AI-Generated Content"
 description: "Git's architecture provides a practical solution to the AI-generated evidence crisis through cryptographic hashing, distributed verification, and temporal impossibility."
-pubDate: 2025-08-06T12:00:00Z
+pubDate: 2025-01-06T12:00:00Z
 author: "Marvin Tutt"
 tags: ["Git", "Forensics", "AI", "Deepfakes", "Cryptography", "Digital Evidence", "Security"]
 featured: false

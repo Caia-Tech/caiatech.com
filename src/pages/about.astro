@@ -1,0 +1,606 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Terminal from '../components/Terminal.astro';
+
+const teamMembers = [
+  {
+    name: "Research Team",
+    role: "Computer Science & AI Research",
+    description: "Advancing the frontiers of natural language processing and web technologies"
+  },
+  {
+    name: "Engineering Team",
+    role: "Software Development",
+    description: "Building robust, privacy-focused developer tools and infrastructure"
+  },
+  {
+    name: "Open Source Contributors",
+    role: "Community",
+    description: "Passionate developers contributing to our open-source initiatives"
+  }
+];
+
+const milestones = [
+  { year: "2024", event: "Launch of 70+ privacy-first developer tools" },
+  { year: "2024", event: "AI-friendly web development framework release" },
+  { year: "2025", event: "Expansion into semantic web technologies" },
+  { year: "Future", event: "Building the bridge between AI and web developers" }
+];
+---
+
+<BaseLayout 
+  title="About Caiatech - Computer Science Research Lab"
+  description="Caiatech is a computer science research lab focused on natural language processing, AI-friendly web development, and privacy-first developer tools."
+  canonical="https://caiatech.com/about"
+>
+  <div class="about-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <span class="control red"></span>
+            <span class="control yellow"></span>
+            <span class="control green"></span>
+          </div>
+          <span class="terminal-title">ABOUT://caiatech</span>
+        </div>
+        <div class="terminal-body">
+          <div class="typing-animation">
+            <p class="prompt">$ <span class="command">whoami</span></p>
+            <div class="output">
+              <h1 class="glitch" data-text="Caiatech Research Lab">Caiatech Research Lab</h1>
+              <p class="tagline">Computer Science Research & Development</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+      <Terminal title="MISSION" icon="🎯">
+        <div class="mission-content">
+          <h2>Our Mission</h2>
+          <p>
+            Caiatech is a computer science research laboratory dedicated to advancing the intersection of 
+            artificial intelligence and web technologies. We focus on creating developer tools that are 
+            <strong>privacy-first</strong>, <strong>AI-friendly</strong>, and <strong>universally accessible</strong>.
+          </p>
+          
+          <div class="values-grid">
+            <div class="value-card">
+              <span class="icon">🔒</span>
+              <h3>Privacy First</h3>
+              <p>All tools run locally in your browser. No data collection, no tracking, no servers.</p>
+            </div>
+            
+            <div class="value-card">
+              <span class="icon">🤖</span>
+              <h3>AI Friendly</h3>
+              <p>Building bridges between AI systems and web developers through semantic technologies.</p>
+            </div>
+            
+            <div class="value-card">
+              <span class="icon">⚡</span>
+              <h3>Performance</h3>
+              <p>Lightning-fast tools that work offline, optimized for developer productivity.</p>
+            </div>
+            
+            <div class="value-card">
+              <span class="icon">🌐</span>
+              <h3>Open Standards</h3>
+              <p>Committed to open web standards, semantic HTML, and accessible technologies.</p>
+            </div>
+          </div>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Research Focus -->
+    <section class="research-section">
+      <Terminal title="RESEARCH" icon="🔬">
+        <div class="research-content">
+          <h2>Research Areas</h2>
+          
+          <div class="research-areas">
+            <div class="area">
+              <h3>Natural Language Processing</h3>
+              <p>Developing systems that understand and generate human language with a focus on web content optimization for AI consumption.</p>
+              <div class="tech-stack">
+                <span class="tech">NLP</span>
+                <span class="tech">Transformers</span>
+                <span class="tech">Semantic Analysis</span>
+              </div>
+            </div>
+            
+            <div class="area">
+              <h3>AI-Web Integration</h3>
+              <p>Creating protocols and standards for seamless communication between AI systems and web applications.</p>
+              <div class="tech-stack">
+                <span class="tech">JSON-LD</span>
+                <span class="tech">Schema.org</span>
+                <span class="tech">Semantic HTML</span>
+              </div>
+            </div>
+            
+            <div class="area">
+              <h3>Privacy-Preserving Computing</h3>
+              <p>Building tools that process data entirely client-side, ensuring zero data transmission and complete user privacy.</p>
+              <div class="tech-stack">
+                <span class="tech">WebAssembly</span>
+                <span class="tech">Client-side Crypto</span>
+                <span class="tech">Local Processing</span>
+              </div>
+            </div>
+            
+            <div class="area">
+              <h3>Developer Experience</h3>
+              <p>Researching and implementing optimal interfaces and workflows for developer productivity.</p>
+              <div class="tech-stack">
+                <span class="tech">UX Research</span>
+                <span class="tech">Tool Design</span>
+                <span class="tech">Workflow Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <Terminal title="TEAM" icon="👥">
+        <div class="team-content">
+          <h2>Our Team</h2>
+          <p class="team-intro">
+            Caiatech brings together researchers, engineers, and contributors passionate about 
+            advancing computer science and building tools that respect user privacy.
+          </p>
+          
+          <div class="team-grid">
+            {teamMembers.map((member) => (
+              <div class="team-card">
+                <div class="member-icon">
+                  <span>{member.role.includes('Research') ? '🔬' : member.role.includes('Engineering') ? '⚙️' : '🌟'}</span>
+                </div>
+                <h3>{member.name}</h3>
+                <p class="role">{member.role}</p>
+                <p class="description">{member.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+      <Terminal title="TIMELINE" icon="📅">
+        <div class="timeline-content">
+          <h2>Our Journey</h2>
+          
+          <div class="timeline">
+            {milestones.map((milestone, index) => (
+              <div class="milestone">
+                <div class="milestone-marker"></div>
+                <div class="milestone-content">
+                  <span class="year">{milestone.year}</span>
+                  <p>{milestone.event}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Open Source Section -->
+    <section class="opensource-section">
+      <Terminal title="OPEN_SOURCE" icon="📂">
+        <div class="opensource-content">
+          <h2>Open Source Commitment</h2>
+          <p>
+            We believe in the power of open source software. Our tools and research are available 
+            to the community, fostering innovation and collaboration.
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat">
+              <span class="number">70+</span>
+              <span class="label">Developer Tools</span>
+            </div>
+            <div class="stat">
+              <span class="number">100%</span>
+              <span class="label">Privacy Focused</span>
+            </div>
+            <div class="stat">
+              <span class="number">0</span>
+              <span class="label">Data Collected</span>
+            </div>
+            <div class="stat">
+              <span class="number">∞</span>
+              <span class="label">Possibilities</span>
+            </div>
+          </div>
+          
+          <div class="cta-section">
+            <a href="https://github.com/caiatech" class="cta-button" target="_blank" rel="noopener">
+              <span class="icon">📦</span>
+              View on GitHub
+            </a>
+            <a href="/tools" class="cta-button">
+              <span class="icon">🛠️</span>
+              Explore Tools
+            </a>
+          </div>
+        </div>
+      </Terminal>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+      <Terminal title="GET_IN_TOUCH" icon="📬">
+        <div class="cta-content">
+          <h2>Let's Build Together</h2>
+          <p>
+            Whether you're a researcher, developer, or organization interested in our work, 
+            we'd love to hear from you.
+          </p>
+          <a href="/contact" class="primary-cta">
+            Contact Us
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </Terminal>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    margin-bottom: 3rem;
+  }
+
+  .terminal-window {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .terminal-header {
+    background: linear-gradient(90deg, rgba(42, 42, 43, 1) 0%, rgba(26, 26, 27, 1) 100%);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .control.red { background: #ff5f57; }
+  .control.yellow { background: #ffbd2e; }
+  .control.green { background: #28ca42; }
+
+  .terminal-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .terminal-body {
+    padding: 2rem;
+    min-height: 200px;
+  }
+
+  .prompt {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    margin-bottom: 1rem;
+  }
+
+  .command {
+    color: var(--color-text);
+  }
+
+  .output h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+  }
+
+  /* Mission Section */
+  .mission-content {
+    padding: 1rem;
+  }
+
+  .mission-content h2 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .value-card {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .value-card:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .value-card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .value-card h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Research Section */
+  .research-areas {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .area {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .area h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .tech {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+  }
+
+  /* Team Section */
+  .team-intro {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .member-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .team-card h3 {
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .role {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Timeline Section */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-accent);
+  }
+
+  .milestone {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .milestone-marker {
+    position: absolute;
+    left: -2.4rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  .year {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-weight: bold;
+  }
+
+  /* Open Source Section */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat .number {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-family: var(--font-mono);
+  }
+
+  .stat .label {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border: 1px solid var(--color-accent);
+    border-radius: 8px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    transition: all 0.3s;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+  }
+
+  /* Contact CTA */
+  .contact-cta {
+    margin-top: 3rem;
+  }
+
+  .cta-content {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .primary-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+
+  .primary-cta:hover {
+    transform: translateX(5px);
+  }
+
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+
+  .primary-cta:hover .arrow {
+    transform: translateX(5px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 1rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-section {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,297 @@
+---
+/**
+ * @fileoverview Global Footer Component - Caiatech
+ * @author Caiatech (https://caiatech.com)
+ * @copyright 2025 Caiatech. All rights reserved.
+ */
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="global-footer">
+  <div class="footer-container">
+    <!-- Main Footer Content -->
+    <div class="footer-content">
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="brand-name">
+          <span class="mono">Caia</span><span class="accent">Tech</span>
+        </div>
+        <p class="brand-description">
+          Computer Science Research Lab focused on AI-friendly web development 
+          and privacy-first developer tools.
+        </p>
+        <div class="privacy-badge">
+          <span class="badge-icon">🔒</span>
+          <span>100% Privacy Guaranteed</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-nav">
+        <div class="nav-section">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/sitemap-index.xml">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="https://github.com/caiatech" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://twitter.com/caiatech" target="_blank" rel="noopener">Twitter</a></li>
+            <li><a href="https://linkedin.com/company/caiatech" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:owner@caiatech.com">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="https://theburden.org" target="_blank" rel="noopener">The Burden</a></li>
+            <li><a href="https://gitforensics.org" target="_blank" rel="noopener">Git Forensics</a></li>
+            <li><a href="/tools/#core-utilities">Core Tools</a></li>
+            <li><a href="/tools/#security-crypto">Security Tools</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>© {currentYear} Caiatech. All rights reserved.</p>
+          <p class="tagline">Building the bridge between AI and web developers</p>
+        </div>
+        
+        <div class="footer-stats">
+          <div class="stat">
+            <span class="stat-number">69+</span>
+            <span class="stat-label">Tools</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Private</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .global-footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    margin-top: 4rem;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 3rem 0 2rem 0;
+  }
+
+  /* Brand Section */
+  .footer-brand {
+    max-width: 400px;
+  }
+
+  .brand-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .brand-name .mono {
+    font-family: var(--font-mono);
+    color: var(--color-text);
+  }
+
+  .brand-name .accent {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+  }
+
+  .brand-description {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(40, 202, 66, 0.1);
+    border: 1px solid rgba(40, 202, 66, 0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #28ca42;
+    font-weight: 500;
+  }
+
+  .badge-icon {
+    font-size: 1rem;
+  }
+
+  /* Navigation */
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+
+  .nav-section h3 {
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-section a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-section a:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-section a[target="_blank"]::after {
+    content: '↗';
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  /* Bottom Footer */
+  .footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+  }
+
+  .copyright .tagline {
+    font-family: var(--font-mono);
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  .footer-stats {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-accent);
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      padding: 0 1rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 0 1.5rem 0;
+    }
+
+    .footer-nav {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer-stats {
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-nav {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-stats {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>

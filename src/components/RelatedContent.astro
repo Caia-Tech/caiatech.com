@@ -1,0 +1,194 @@
+---
+export interface Props {
+  currentPage: string;
+  type: 'article' | 'tool' | 'mixed';
+  tags?: string[];
+  maxItems?: number;
+}
+
+const { currentPage, type, tags = [], maxItems = 3 } = Astro.props;
+
+// Define related content mappings
+const relatedContent = {
+  articles: {
+    'git-ai': ['git-forensics-ai-deepfakes', 'git-temporal-infrastructure-automation'],
+    'git-forensics-ai-deepfakes': ['git-ai', 'git-temporal-infrastructure-automation'],
+    'git-temporal-infrastructure-automation': ['git-ai', 'build-like-your-life-depends-on-it'],
+    'build-like-your-life-depends-on-it': ['give-free-get-free', 'git-temporal-infrastructure-automation'],
+    'give-free-get-free': ['build-like-your-life-depends-on-it', 'afdp-trillion-dollar-ai-lie'],
+    'afdp-trillion-dollar-ai-lie': ['give-free-get-free', 'git-ai']
+  },
+  tools: {
+    'base64': ['url', 'escape', 'unicode'],
+    'hash': ['bcrypt', 'aes', 'pgp'],
+    'json': ['yaml', 'xml', 'prettify'],
+    'git': ['ssh-key', 'pgp', 'hash'],
+    'regex': ['escape', 'grep', 'diff'],
+    'uuid': ['timestamp', 'hash', 'password'],
+    'jwt': ['base64', 'hash', 'aes'],
+    'markdown': ['html-entities', 'escape', 'prettify'],
+    'yaml': ['json', 'xml', 'prettify'],
+    'bcrypt': ['hash', 'password', 'aes'],
+    'aes': ['rsa', 'pgp', 'encryption'],
+    'rsa': ['ssh-key', 'pgp', 'aes'],
+    'url': ['base64', 'escape', 'uri-validator'],
+    'color': ['hex', 'colors', 'css-formatter'],
+    'timestamp': ['date-format', 'uuid', 'cron'],
+    'css-formatter': ['js-formatter', 'beautify', 'minify'],
+    'js-formatter': ['css-formatter', 'prettify', 'beautify']
+  },
+  tagRelated: {
+    'AI': ['git-ai', 'git-forensics-ai-deepfakes', 'afdp-trillion-dollar-ai-lie'],
+    'Git': ['git', 'ssh-key', 'pgp'],
+    'DevOps': ['docker', 'yaml', 'cron', 'git'],
+    'Security': ['hash', 'bcrypt', 'aes', 'rsa', 'pgp'],
+    'Encryption': ['aes', 'rsa', 'pgp', 'bcrypt'],
+    'Infrastructure': ['docker', 'yaml', 'cron', 'chmod']
+  }
+};
+
+// Get related items based on current page and tags
+let suggestions = [];
+
+if (type === 'article' || type === 'mixed') {
+  const articleSuggestions = relatedContent.articles[currentPage] || [];
+  suggestions.push(...articleSuggestions.map(slug => ({
+    type: 'article',
+    slug,
+    href: `/articles/${slug}/`,
+    title: slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+  })));
+}
+
+if (type === 'tool' || type === 'mixed') {
+  const toolSuggestions = relatedContent.tools[currentPage] || [];
+  suggestions.push(...toolSuggestions.map(slug => ({
+    type: 'tool',
+    slug,
+    href: `/tools/${slug}/`,
+    title: slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+  })));
+}
+
+// Add tag-based suggestions
+tags.forEach(tag => {
+  const tagSuggestions = relatedContent.tagRelated[tag] || [];
+  tagSuggestions.forEach(slug => {
+    if (!suggestions.find(s => s.slug === slug)) {
+      const isArticle = slug.includes('-') && slug.length > 10;
+      suggestions.push({
+        type: isArticle ? 'article' : 'tool',
+        slug,
+        href: isArticle ? `/articles/${slug}/` : `/tools/${slug}/`,
+        title: slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+      });
+    }
+  });
+});
+
+// Limit suggestions
+suggestions = suggestions.slice(0, maxItems);
+---
+
+{suggestions.length > 0 && (
+  <section class="related-content">
+    <h3 class="related-title">
+      <span class="prompt">$</span> related_content
+    </h3>
+    
+    <div class="related-grid">
+      {suggestions.map(item => (
+        <a href={item.href} class="related-item">
+          <span class="related-type">
+            {item.type === 'article' ? '📝' : '🔧'}
+          </span>
+          <div class="related-info">
+            <span class="related-label">
+              <span class="prompt">~/</span>
+              {item.type}s/{item.slug}
+            </span>
+            <span class="related-name">{item.title}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .related-content {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .related-title {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .related-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .related-item:hover {
+    border-color: var(--color-accent);
+    transform: translateX(2px);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+
+  .related-type {
+    font-size: 1.5rem;
+    opacity: 0.7;
+  }
+
+  .related-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .related-label {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
+  .related-name {
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .prompt {
+    color: var(--color-accent);
+    opacity: 0.7;
+    margin-right: 0.125rem;
+  }
+
+  .related-item:hover .prompt {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

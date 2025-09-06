@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="Caia Tech - Computer Science Research & Practical AI Implementations" 
+  title="Caiatech - Computer Science Research & Practical AI Implementations" 
   description="Building the future of creative technology with ML. From transformers to Kubernetes: Full-stack innovation in distributed systems, machine learning pipeline optimization, and open source AI research."
   canonical="https://caiatech.com/"
 >
@@ -14,11 +14,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <span class="mono">Caia</span>
           <span class="accent">Tech</span>
         </h1>
+        <p class="hero-tagline">
+          Computer Science Research Lab building <strong>privacy-first developer tools</strong> 
+          and bridging the gap between AI and web development.
+        </p>
+        <div class="cta-section">
+          <a href="/tools/" class="primary-cta">
+            <span class="cta-text">Explore 69+ Free Tools</span>
+            <span class="cta-arrow">→</span>
+          </a>
+          <p class="cta-subtitle">
+            ✨ 100% private • No tracking • Works offline
+          </p>
+        </div>
         <div class="button-container">
           <a href="/articles/" class="terminal-btn"><span class="prompt">$</span> ./articles</a>
-          <a href="/tools/" class="terminal-btn"><span class="prompt">$</span> ./tools</a>
-          <button class="terminal-btn" onclick="showModal('Software')"><span class="prompt">$</span> ./software</button>
-          <button class="terminal-btn" onclick="showModal('Papers')"><span class="prompt">$</span> ./papers</button>
+          <a href="/about/" class="terminal-btn"><span class="prompt">$</span> ./about</a>
+          <a href="https://github.com/caiatech" target="_blank" rel="noopener" class="terminal-btn"><span class="prompt">$</span> ./github</a>
           <button class="terminal-btn" onclick="showModal('Books')"><span class="prompt">$</span> ./books</button>
         </div>
       </div>
@@ -120,12 +132,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     if (title === 'Books') {
       output1.innerHTML = '<span class="text-accent">></span> The Burden: <a href="https://theburden.org" target="_blank" rel="noopener noreferrer" class="terminal-link">theburden.org</a>';
       output2.innerHTML = '<span class="text-accent">></span> Git Forensics: <a href="https://gitforensics.org" target="_blank" rel="noopener noreferrer" class="terminal-link">gitforensics.org</a>';
-    } else if (title === 'Software') {
-      output1.innerHTML = '<span class="text-accent">></span> Loading open source AI research projects...';
-      output2.innerHTML = '<span class="text-accent">></span> Full-stack implementations coming soon!';
-    } else if (title === 'Papers') {
-      output1.innerHTML = '<span class="text-accent">></span> Accessing peer-reviewed ML implementations...';
-      output2.innerHTML = '<span class="text-accent">></span> Research publications coming soon!';
     }
     
     modal.style.display = 'flex';
@@ -180,6 +186,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .hero-content {
     z-index: 1;
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 1.5rem 0;
+    max-width: 500px;
+  }
+  
+  .hero-tagline strong {
+    color: var(--color-accent);
+  }
+  
+  .cta-section {
+    margin: 2rem 0 2.5rem 0;
+  }
+  
+  .primary-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #00b8e6 100%);
+    color: var(--color-bg);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  }
+  
+  .primary-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+  }
+  
+  .cta-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .primary-cta:hover .cta-arrow {
+    transform: translateX(5px);
+  }
+  
+  .cta-subtitle {
+    margin: 0.75rem 0 0 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
   }
 
   .hero h1 {

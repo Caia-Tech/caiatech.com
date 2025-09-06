@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lastUpdated = new Date().toLocaleDateString('en-US', { 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric' 
+});
+---
+
+<BaseLayout 
+  title="Privacy Policy - Caiatech"
+  description="Caiatech's privacy policy. We don't collect, store, or track any user data. All tools run entirely in your browser."
+  canonical="https://caiatech.com/privacy"
+>
+  <div class="privacy-container">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: {lastUpdated}</p>
+    <p>We don't collect any data. All tools run client-side.</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .privacy-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+</style>

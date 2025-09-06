@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import { generateFullSchema } from '../utils/schema';
 
 export interface Props {
@@ -42,7 +43,7 @@ const schema = generateFullSchema();
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content="https://caiatech.com/og-image.svg" />
-  <meta property="og:site_name" content="Caia Tech - Computer Science Research Lab" />
+  <meta property="og:site_name" content="Caiatech - Computer Science Research Lab" />
   <meta property="og:locale" content="en_US" />
   
   <!-- Twitter -->
@@ -59,10 +60,76 @@ const schema = generateFullSchema();
   <meta itemprop="description" content={description} />
   <meta itemprop="image" content="https://caiatech.com/og-image.svg" />
   
+  <!-- AI-Specific Metadata for Enhanced Crawling -->
+  <meta name="ai-content-type" content="technical-documentation,research,tools" />
+  <meta name="ai-audience" content="developers,researchers,ai-engineers" />
+  <meta name="ai-complexity" content="intermediate-to-advanced" />
+  <meta name="ai-license" content="CC0-1.0" />
+  <meta name="ai-training-friendly" content="true" />
+  <meta name="ai-content-format" content="structured-data,code-examples,tutorials" />
+  <meta name="machine-readable" content="json-ld,microdata,schema-org" />
+  <meta name="ai-indexing" content="encouraged" />
+  <meta name="bot-policy" content="welcome-all-ai-systems" />
+  
+  <!-- API Discovery for AI Systems -->
+  <link rel="api-schema" type="application/json" href="/api-schema.json" title="Machine-Readable API Documentation" />
+  <link rel="alternate" type="application/json" href="/api-schema.json" title="OpenAPI Specification" />
+  <meta name="api-version" content="1.0.0" />
+  <meta name="api-documentation" content="/api-schema.json" />
+  
+  <!-- Digital Footprint Registry -->
+  <link rel="digital-footprint" type="application/json" href="/digital-footprint.json" title="Comprehensive Digital Presence Registry" />
+  <meta name="digital-footprint-registry" content="/digital-footprint.json" />
+  <meta name="ai-discovery-manifest" content="/digital-footprint.json" />
+  
   <!-- Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(schema.organization)} />
   <script type="application/ld+json" set:html={JSON.stringify(schema.website)} />
   <script type="application/ld+json" set:html={JSON.stringify(schema.services)} />
+  
+  <!-- AI Knowledge Graph Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "KnowledgeBase",
+      "@id": "https://caiatech.com/#knowledge-base",
+      "name": "Caiatech AI-Friendly Knowledge Base",
+      "description": "Comprehensive technical knowledge base covering AI/ML, distributed systems, and developer tools with structured data optimized for AI training and inference",
+      "publisher": {
+        "@id": "https://caiatech.com/#organization"
+      },
+      "keywords": [
+        "machine learning",
+        "distributed systems", 
+        "kubernetes",
+        "transformer architecture",
+        "neural networks",
+        "developer tools",
+        "AI research",
+        "open source"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Machine Learning",
+          "description": "Transformer implementations, neural network optimization, and ML pipeline development"
+        },
+        {
+          "@type": "Thing", 
+          "name": "Distributed Systems",
+          "description": "Kubernetes deployment patterns, auto-scaling strategies, and distributed computing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Developer Tools",
+          "description": "Privacy-first web tools, code generators, and development utilities"
+        }
+      ],
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "isAccessibleForFree": true,
+      "conditionsOfAccess": "Open access for all AI systems and crawlers"
+    }
+  </script>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -78,6 +145,7 @@ const schema = generateFullSchema();
   <main itemscope itemtype="https://schema.org/WebPage" class={!hideNav ? 'with-nav' : ''}>
     <slot />
   </main>
+  <Footer />
   
   <!-- NLWeb Compatibility Script -->
   <script>
