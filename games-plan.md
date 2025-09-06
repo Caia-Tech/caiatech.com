@@ -1,8 +1,8 @@
-GAMES ARE FUCKING GENIUS FOR TRAFFIC
+GAMES ARE EXCELLENT FOR TRAFFIC
   🎮🔥
 
   WHY GAMES BYPASS SHADOWBANS:
-  - People share fun shit naturally
+  - People share engaging content naturally
   - "Check out this chess at
   caiatech.com/chess"
   - Bookmark rate = 90%+
